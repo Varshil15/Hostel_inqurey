@@ -50,6 +50,275 @@
   --transition-fast: all 0.15s ease-in-out;
 }
 
+/* ==============================
+   VERTICAL FACILITIES SECTION
+============================== */
+
+/* Vertical Facilities Section - Stanza Living Timeline Style */
+.vertical-facilities-section {
+  padding: 80px 20px 120px;
+  background: linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical-section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vertical-eyebrow-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #275E59;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.vertical-section-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #18433F;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.vertical-section-subtitle {
+  font-size: 18px;
+  color: #6b8c87;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.vertical-facilities-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.vertical-facility-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 32px 32px;
+  margin-bottom: 60px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(24, 67, 63, 0.08);
+  border: 1px solid rgba(24, 67, 63, 0.04);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 10;
+  width: 320px;
+  max-width: 90%;
+}
+
+/* Alternating card positions */
+.vertical-facility-card:nth-child(odd) {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.vertical-facility-card:nth-child(even) {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.vertical-facility-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: linear-gradient(135deg, #18433F 0%, #275E59 100%);
+  border-radius: 20px 20px 0 0;
+  transition: height 0.3s ease;
+}
+
+.vertical-facility-card:hover::before {
+  height: 4px;
+}
+
+.vertical-facility-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(24, 67, 63, 0.15);
+}
+
+.vertical-facility-emoji {
+  font-size: 48px;
+  margin-bottom: 24px;
+  display: block;
+  line-height: 1;
+}
+
+.vertical-facility-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #18433F;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.vertical-facility-description {
+  font-size: 15px;
+  color: #6b8c87;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.vertical-path-container {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vertical-connecting-path {
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-scroll-bubble {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #275E59, #18433F);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 4px 20px rgba(39, 94, 89, 0.4);
+  z-index: 15;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical-scroll-bubble::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #275E59, #18433F);
+  opacity: 0.3;
+  animation: verticalBubblePulse 2s ease-in-out infinite;
+}
+
+@keyframes verticalBubblePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.1;
+  }
+}
+
+/* Timeline connector dots */
+.vertical-facility-card::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #275E59;
+  border-radius: 50%;
+  top: 50%;
+  z-index: 20;
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px rgba(39, 94, 89, 0.2);
+}
+
+.vertical-facility-card:nth-child(odd)::after {
+  right: -6px;
+  transform: translateY(-50%);
+}
+
+.vertical-facility-card:nth-child(even)::after {
+  left: -6px;
+  transform: translateY(-50%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .vertical-facilities-section {
+    padding: 60px 16px 80px;
+  }
+
+  .vertical-section-header {
+    margin-bottom: 60px;
+  }
+
+  .vertical-section-title {
+    font-size: 28px;
+  }
+
+  .vertical-section-subtitle {
+    font-size: 16px;
+  }
+
+  .vertical-facilities-container {
+    max-width: 100%;
+    padding: 40px 10px;
+  }
+
+  .vertical-facility-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 32px 24px 24px;
+    margin-bottom: 40px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .vertical-facility-card::after {
+    display: none;
+  }
+
+  .vertical-facility-emoji {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .vertical-facility-title {
+    font-size: 20px;
+  }
+
+  .vertical-facility-description {
+    font-size: 14px;
+  }
+
+  .vertical-path-container {
+    width: 100px;
+  }
+
+  .vertical-scroll-bubble {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vertical-facilities-container {
+    padding: 30px 5px;
+  }
+
+  .vertical-facility-card {
+    max-width: 280px;
+    padding: 28px 20px 20px;
+  }
+}
+}
+
 /* Reset and base styles */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -113,11 +382,12 @@ body {
 }
 
 .logo {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
+  width: 280px;
+  height: 80px;
+  border-radius: 6px;
   object-fit: cover;
-  box-shadow: var(--shadow-md);
+  object-position: center;
+  /* box-shadow: var(--shadow-md); */
 }
 
 .brand-text h1 {
@@ -138,12 +408,18 @@ body {
 }
 
 /* Navigation */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
 .site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: var(--spacing-sm);
+  align-items: center;
 }
 
 .site-nav a {
@@ -253,35 +529,77 @@ body {
 }
 
 .btn-outline {
-  background: transparent;
-  border: 2px solid var(--accent-2);
-  color: var(--accent-2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: white;
   position: relative;
   overflow: hidden;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .btn-outline::before {
   content: '';
   position: absolute;
   top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-outline::after {
+  content: '';
+  position: absolute;
+  top: 0;
   left: 0;
   width: 0;
   height: 100%;
-  background: var(--premium-gradient);
-  transition: width 0.3s ease;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
 }
 
 .btn-outline:hover::before {
+  left: 100%;
+}
+
+.btn-outline:hover::after {
   width: 100%;
 }
 
 .btn-outline:hover {
-  color: white;
-  border-color: var(--accent-2);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+}
+
+.btn-outline:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+@keyframes btn-pulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+  50% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1); }
+}
+
+.btn-outline {
+  animation: btn-pulse 3s ease-in-out infinite;
+}
+
+.btn-outline:hover {
+  animation: none;
 }
 
 .btn-small {
@@ -442,8 +760,34 @@ section h3 i {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.facilities-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.facilities-scroll {
+  display: flex;
+  gap: var(--spacing-xl);
+  overflow-x: auto;
+  padding: var(--spacing-xl) 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(24, 67, 63, 0.2) transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.facilities-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.facilities-scroll::-webkit-scrollbar-track {
+  background: rgba(24, 67, 63, 0.05);
+  border-radius: 3px;
+}
+
+.facilities-scroll::-webkit-scrollbar-thumb {
+  background: rgba(24, 67, 63, 0.2);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.facilities-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(24, 67, 63, 0.3);
 }
 
 .gallery-grid {
@@ -564,38 +908,83 @@ section h3 i {
   width: 16px;
 }
 
-/* Facility cards */
+/* Facility cards - Modern rectangular design */
 .facility-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(24, 67, 63, 0.08);
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
   text-align: center;
-  padding: var(--spacing-xl);
+  min-width: 280px;
+  max-width: 320px;
+  width: 280px;
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(24, 67, 63, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.facility-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--premium-gradient);
+  transition: height 0.3s ease;
+}
+
+.facility-card:hover::before {
+  height: 3px;
+}
+
+.facility-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(24, 67, 63, 0.15);
 }
 
 .facility-icon {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   background: var(--premium-gradient);
-  border-radius: 50%;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--spacing-md) auto;
-  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 8px 24px rgba(24, 67, 63, 0.2);
+  transition: all 0.3s ease;
+}
+
+.facility-card:hover .facility-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(24, 67, 63, 0.25);
 }
 
 .facility-icon i {
-  font-size: var(--font-size-xl);
+  font-size: 1.5rem;
   color: white;
 }
 
 .facility-card h4 {
   margin: 0 0 var(--spacing-sm) 0;
-  font-size: var(--font-size-lg);
-  font-weight: 600;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
 }
 
 .facility-card p {
   color: var(--text-secondary);
   margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  max-width: 240px;
 }
 
 /* Gallery */
@@ -894,6 +1283,30 @@ section h3 i {
   align-self: flex-start;
   font-weight: 600;
   padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+/* Contact section specific button styling */
+.contact-methods .btn-outline {
+  background: white;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  backdrop-filter: none;
+  box-shadow: var(--shadow-md);
+  animation: none;
+}
+
+.contact-methods .btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  animation: none;
+}
+
+.contact-methods .btn-outline::before,
+.contact-methods .btn-outline::after {
+  display: none;
 }
 
 .btn-success {
@@ -1504,6 +1917,39 @@ section h3 i {
   
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Mobile facility cards adjustments */
+  .facilities-scroll {
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .facility-card {
+    min-width: 240px;
+    width: 240px;
+    flex: 0 0 240px;
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  }
+  
+  .facility-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .facility-icon i {
+    font-size: 1.25rem;
+  }
+  
+  .facility-card h4 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .facility-card p {
+    font-size: var(--font-size-xs);
+    max-width: 200px;
   }
 }
 

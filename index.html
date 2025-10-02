@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CampusStay Hostel - Premium Student Accommodation</title>
+  <title>Om Shiv Shakti - Premium Student Accommodation</title>
   <meta name="description" content="Affordable, safe, and comfortable student hostel accommodation near campus. Book your room today!">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 768px)">
@@ -11,16 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- GSAP Scripts for Vertical Facilities Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=48&h=48&fit=crop&crop=center" alt="CampusStay logo" class="logo">
-        <div class="brand-text">
-          <h1>CampusStay</h1>
-          <small>Safe, affordable student living</small>
-        </div>
+        <img src="bann.png" alt="Om Shiv Shakti" class="logo">
       </div>
 
       <nav class="site-nav" aria-label="Main navigation">
@@ -30,19 +31,18 @@
           <li><a href="#facilities"><i class="fas fa-wifi"></i> Facilities</a></li>
           <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
           <li><a href="#pricing"><i class="fas fa-calculator"></i> Pricing</a></li>
-          <li><a href="#inquiry"><i class="fas fa-envelope"></i> Inquiry</a></li>
           <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
         </ul>
       </nav>
 
-      <div class="header-actions">
-        <a class="btn btn-outline" href="#inquiry">Book Now</a>
+      <!-- <div class="header-actions">
+        <a class="btn btn-outline" href="#contact">Book Now</a>
         <button class="hamburger" aria-label="Open menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-      </div>
+      </div> -->
     </div>
   </header>
 
@@ -70,7 +70,7 @@
             </div>
           </div>
           <div class="hero-ctas">
-            <a href="#inquiry" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Reserve a Room</a>
+            <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Reserve a Room</a>
             <a href="#rooms" class="btn btn-outline"><i class="fas fa-eye"></i> View Rooms</a>
           </div>
         </div>
@@ -82,7 +82,7 @@
 
     <section id="about" class="about container">
       <h3>About Us</h3>
-      <p class="lead">CampusStay is a student-first hostel offering affordable shared and private rooms with modern amenities. Our mission is to provide a safe, friendly and focused environment for study and living. Located 10 minutes from the main campus and public transport.</p>
+      <p class="lead">Om Shiv Shakti is a student-first hostel offering affordable shared and private rooms with modern amenities. Our mission is to provide a safe, friendly and focused environment for study and living. Located 10 minutes from the main campus and public transport.</p>
     </section>
 
     <section id="rooms" class="rooms container">
@@ -103,7 +103,7 @@
               <li><i class="fas fa-lock"></i> Personal lockers</li>
               <li><i class="fas fa-air-freshener"></i> Air conditioning</li>
             </ul>
-            <a class="btn btn-small btn-primary" href="#inquiry">Book Dorm</a>
+            <a class="btn btn-small btn-primary" href="#contact">Book Dorm</a>
           </div>
         </article>
 
@@ -120,7 +120,7 @@
               <li><i class="fas fa-broom"></i> Housekeeping</li>
               <li><i class="fas fa-desktop"></i> Study desk</li>
             </ul>
-            <a class="btn btn-small btn-primary" href="#inquiry">Book Single</a>
+            <a class="btn btn-small btn-primary" href="#contact">Book Single</a>
           </div>
         </article>
 
@@ -137,7 +137,7 @@
               <li><i class="fas fa-book"></i> Study area</li>
               <li><i class="fas fa-closet"></i> Wardrobe space</li>
             </ul>
-            <a class="btn btn-small btn-primary" href="#inquiry">Book Double</a>
+            <a class="btn btn-small btn-primary" href="#contact">Book Double</a>
           </div>
         </article>
 
@@ -160,80 +160,61 @@
       </div>
     </section>
 
-    <section id="facilities" class="facilities container">
-      <h3><i class="fas fa-star"></i> World Class Facilities</h3>
-      <p class="section-intro">Everything you need for comfortable student living under one roof.</p>
-      <div class="facilities-grid grid">
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-wifi"></i>
-          </div>
-          <h4>High-Speed Wi‑Fi</h4>
-          <p>24/7 unlimited internet access throughout the property</p>
+    <!-- Vertical Facilities Section with Animation -->
+    <section class="vertical-facilities-section" id="facilities">
+      <div class="vertical-section-header">
+        <div class="vertical-eyebrow-text">Not just four walls and a roof</div>
+        <h2 class="vertical-section-title">Come over and experience how a place to stay can be so much more</h2>
+        <p class="vertical-section-subtitle">Discover world-class amenities and services designed to make your living experience extraordinary. From high-speed connectivity to gourmet meals, we've got everything covered for modern student life.</p>
+      </div>
+
+      <div class="vertical-facilities-container" id="verticalFacilitiesContainer">
+        <div class="vertical-facility-card" data-card="0">
+          <span class="vertical-facility-emoji">🚀</span>
+          <h3 class="vertical-facility-title">High-Speed Wi-Fi</h3>
+          <p class="vertical-facility-description">Lightning-fast internet throughout the property for seamless work and entertainment experiences</p>
         </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-utensils"></i>
-          </div>
-          <h4>Mess / Canteen</h4>
-          <p>Healthy, affordable meals with varied menu options</p>
+
+        <div class="vertical-facility-card" data-card="1">
+          <span class="vertical-facility-emoji">🍽️</span>
+          <h3 class="vertical-facility-title">Gourmet Meals</h3>
+          <p class="vertical-facility-description">Fresh, nutritious meals prepared daily by expert chefs with diverse menu options</p>
         </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-tshirt"></i>
-          </div>
-          <h4>Laundry Service</h4>
-          <p>Professional washing and cleaning services available</p>
+
+        <div class="vertical-facility-card" data-card="2">
+          <span class="vertical-facility-emoji">🧹</span>
+          <h3 class="vertical-facility-title">Daily Housekeeping</h3>
+          <p class="vertical-facility-description">Professional cleaning services to keep your space spotless and comfortable every day</p>
         </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-blender"></i>
-          </div>
-          <h4>Shared Kitchen</h4>
-          <p>Fully equipped kitchen for cooking your own meals</p>
+
+        <div class="vertical-facility-card" data-card="3">
+          <span class="vertical-facility-emoji">🏋️</span>
+          <h3 class="vertical-facility-title">Fitness Center</h3>
+          <p class="vertical-facility-description">State-of-the-art gym equipment and wellness facilities for achieving your health goals</p>
         </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-car"></i>
-          </div>
-          <h4>Parking Space</h4>
-          <p>Secure parking for bikes, cars, and two-wheelers</p>
+
+        <div class="vertical-facility-card" data-card="4">
+          <span class="vertical-facility-emoji">🔒</span>
+          <h3 class="vertical-facility-title">24/7 Security</h3>
+          <p class="vertical-facility-description">Round-the-clock security with advanced surveillance for complete peace of mind</p>
         </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <h4>Study Areas</h4>
-          <p>Quiet, well-lit spaces designed for focused study</p>
+
+        <div class="vertical-facility-card" data-card="5">
+          <span class="vertical-facility-emoji">🎮</span>
+          <h3 class="vertical-facility-title">Recreation Zone</h3>
+          <p class="vertical-facility-description">Gaming areas, entertainment rooms, and social spaces for relaxation and fun activities</p>
         </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-lock"></i>
-          </div>
-          <h4>Personal Lockers</h4>
-          <p>Secure storage for your valuables and belongings</p>
-        </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-dumbbell"></i>
-          </div>
-          <h4>Fitness Center</h4>
-          <p>Modern gym equipment for maintaining your health</p>
-        </div>
-        
-        <div class="facility-card card">
-          <div class="facility-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h4>24/7 Security</h4>
-          <p>Round-the-clock security with CCTV surveillance</p>
+
+        <!-- Vertical SVG Path for Animation -->
+        <div class="vertical-path-container">
+          <svg class="vertical-connecting-path" viewBox="0 0 200 1000" preserveAspectRatio="none">
+            <path id="verticalMotionPath" d="M100,0 Q60,80 40,150 Q20,220 60,300 Q100,380 140,450 Q180,520 140,600 Q100,680 60,750 Q20,820 60,900 Q100,980 100,1000" 
+                  stroke="rgba(39, 94, 89, 0.2)" 
+                  stroke-width="2" 
+                  fill="none" 
+                  stroke-dasharray="8,4"/>
+          </svg>
+          <div class="vertical-scroll-bubble" id="verticalScrollBubble"></div>
         </div>
       </div>
     </section>
@@ -363,12 +344,12 @@
       </div>
     </section>
 
-    <section id="inquiry" class="inquiry container">
-      <h3><i class="fas fa-envelope"></i> Inquiry & Booking</h3>
-      <p class="section-intro">Ready to book your room? Contact us directly through email or WhatsApp for quick assistance.</p>
+    <section id="contact" class="inquiry container">
+      <h3><i class="fas fa-phone"></i> Contact Information</h3>
+      <p class="section-intro">Get in touch with us for room bookings and inquiries.</p>
       <div class="inquiry-grid grid">
         <div class="inquiry-features card">
-          <h4>Why Choose CampusStay?</h4>
+          <h4>Why Choose Om Shiv Shakti?</h4>
           <div class="feature-list">
             <div class="feature-item">
               <i class="fas fa-home"></i>
@@ -417,36 +398,19 @@
         </div>
 
         <div class="card contact-methods">
-          <h4><i class="fas fa-phone-alt"></i> Contact Us Directly</h4>
-          <p class="contact-intro">Get in touch with us through your preferred method. We're here to help you find the perfect accommodation!</p>
+          <h4><i class="fas fa-phone-alt"></i> Contact Us</h4>
+          <p class="contact-intro">Reach out to us through any of these methods for room bookings and inquiries.</p>
           
           <div class="contact-options">
-            <div class="contact-option email-contact">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-details">
-                <h5>Email Us</h5>
-                <p>Send us your inquiries and we'll respond within 24 hours</p>
-                <div class="contact-actions">
-                  <a href="mailto:bookings@campusstay.com?subject=Room Booking Inquiry&body=Hi CampusStay Team,%0D%0A%0D%0AI am interested in booking a room. Please provide me with:%0D%0A%0D%0A- Available room types and pricing%0D%0A- Move-in dates%0D%0A- Booking process%0D%0A- Any current offers%0D%0A%0D%0AThank you!" 
-                     class="btn btn-primary contact-btn">
-                    <i class="fas fa-envelope"></i> Send Email
-                  </a>
-                  <span class="contact-info">bookings@campusstay.com</span>
-                </div>
-              </div>
-            </div>
-
             <div class="contact-option whatsapp-contact">
               <div class="contact-icon whatsapp">
                 <i class="fab fa-whatsapp"></i>
               </div>
               <div class="contact-details">
-                <h5>WhatsApp Chat</h5>
-                <p>Chat with us instantly for immediate assistance and booking</p>
+                <h5>WhatsApp</h5>
+                <p>Chat with us instantly for immediate assistance</p>
                 <div class="contact-actions">
-                  <a href="https://wa.me/919876543210?text=Hi%20CampusStay%21%20I%27m%20interested%20in%20booking%20a%20room.%20Could%20you%20please%20share%20details%20about%3A%0A%0A-%20Available%20rooms%20and%20pricing%0A-%20Move-in%20dates%0A-%20Booking%20process%0A-%20Current%20offers%0A%0AThank%20you%21" 
+                  <a href="https://wa.me/919876543210" 
                      target="_blank" 
                      rel="noopener"
                      class="btn btn-success contact-btn">
@@ -474,153 +438,16 @@
             </div>
           </div>
 
-          <div class="booking-process">
-            <h5><i class="fas fa-list-ol"></i> Quick Booking Process</h5>
-            <ol class="process-steps">
-              <li>
-                <span class="step-number">1</span>
-                <span class="step-text">Contact us via email or WhatsApp with your requirements</span>
-              </li>
-              <li>
-                <span class="step-number">2</span>
-                <span class="step-text">We'll share available options and pricing</span>
-              </li>
-              <li>
-                <span class="step-number">3</span>
-                <span class="step-text">Virtual or in-person room viewing (optional)</span>
-              </li>
-              <li>
-                <span class="step-number">4</span>
-                <span class="step-text">Complete booking with advance payment</span>
-              </li>
-            </ol>
-          </div>
-
-          <div class="booking-benefits">
-            <h5><i class="fas fa-star"></i> What to Include in Your Message</h5>
-            <ul class="benefits-list">
-              <li><i class="fas fa-check"></i> Preferred room type (Dorm/Single/Double)</li>
-              <li><i class="fas fa-check"></i> Move-in date and duration of stay</li>
-              <li><i class="fas fa-check"></i> Budget range</li>
-              <li><i class="fas fa-check"></i> Any special requirements</li>
-              <li><i class="fas fa-check"></i> Contact information</li>
-            </ul>
+          <div class="contact-address">
+            <h5><i class="fas fa-map-marker-alt"></i> Visit Us</h5>
+            <div class="address-details">
+              <p><strong>Om Shiv Shakti Student Accommodation</strong></p>
+              <p>12 College Road, Near University Campus</p>
+              <p>City, State - 123456</p>
+              <p><strong>Office Hours:</strong> Monday to Saturday, 9 AM - 7 PM</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="testimonials container">
-      <h3><i class="fas fa-quote-left"></i> What Our Students Say</h3>
-      <p class="section-intro">Real experiences from our hostel community members.</p>
-      <div class="testimonials-grid grid">
-        <figure class="card testimonial">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?w=60&h=60&fit=crop&crop=face" alt="Asha" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5>Asha Sharma</h5>
-              <span>Computer Science, 2nd year</span>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <blockquote>"CampusStay is the perfect place to focus on studies. The rooms are clean, Wi-Fi is fast, and the staff is incredibly friendly and helpful. I've made great friends here!"</blockquote>
-        </figure>
-
-        <figure class="card testimonial">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Rohit" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5>Rohit Kumar</h5>
-              <span>Mechanical Engineering, 1st year</span>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <blockquote>"The location is fantastic - just 10 minutes to campus! The mess food is delicious and affordable. The study areas are quiet and well-maintained."</blockquote>
-        </figure>
-
-        <figure class="card testimonial">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Maria" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5>Maria Rodriguez</h5>
-              <span>Exchange Student, Business</span>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <blockquote>"As an international student, I was worried about finding safe accommodation. CampusStay exceeded my expectations with excellent security and a welcoming community."</blockquote>
-        </figure>
-        
-        <figure class="card testimonial">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face" alt="Arjun" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5>Arjun Patel</h5>
-              <span>MBA, Final year</span>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <blockquote>"The single rooms are spacious and perfect for focused study. The 24/7 security gives peace of mind to parents. Highly recommend for serious students!"</blockquote>
-        </figure>
-        
-        <figure class="card testimonial">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&crop=face" alt="Priya" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5>Priya Singh</h5>
-              <span>Medical Student, 3rd year</span>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <blockquote>"The gym facility is amazing and helps me maintain a healthy lifestyle. The shared kitchen is well-equipped for cooking nutritious meals during exam season."</blockquote>
-        </figure>
-        
-        <figure class="card testimonial">
-          <div class="testimonial-header">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="David" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5>David Thompson</h5>
-              <span>PhD Student, Research</span>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-          <blockquote>"The quiet study areas and reliable internet make it ideal for research work. The community events help international students like me feel at home."</blockquote>
-        </figure>
       </div>
     </section>
 
@@ -654,8 +481,8 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=60&h=60&fit=crop&crop=center" alt="CampusStay logo" class="footer-logo">
-          <h4>CampusStay</h4>
+          <img src="bann.png" alt="Om Shiv Shakti logo" class="footer-logo">
+          <h4>Om Shiv Shakti</h4>
           <p>Your trusted partner for safe, comfortable, and affordable student accommodation.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -672,7 +499,7 @@
             <div class="contact-info">
               <p><i class="fas fa-home"></i> GETCO, NH 8, near Biltech, Dhamdod, Kosamba, Gujarat 394125</p>
               <p><i class="fas fa-phone"></i> <a href="tel:+911234567890">+91 12345 67890</a></p>
-              <p><i class="fas fa-envelope"></i> <a href="mailto:hello@campusstay.example">hello@campusstay.example</a></p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:hello@omshivshakti.com">hello@omshivshakti.com</a></p>
               <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/911234567890" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
             </div>
             
@@ -691,7 +518,7 @@
               <li><a href="#facilities">Facilities</a></li>
               <li><a href="#pricing">Pricing</a></li>
               <li><a href="#gallery">Photo Gallery</a></li>
-              <li><a href="#testimonials">Reviews</a></li>
+              <li><a href="#contact">Contact Us</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
@@ -709,18 +536,17 @@
           </div>
 
           <div class="footer-section">
-            <h4><i class="fas fa-bell"></i> Stay Updated</h4>
-            <p>Subscribe to our newsletter for updates on room availability and special offers.</p>
-            <form class="newsletter-form">
-              <div class="newsletter-input">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </form>
-            
+            <h4><i class="fas fa-phone"></i> Emergency & Support</h4>
             <div class="emergency-contact">
               <h5><i class="fas fa-exclamation-triangle"></i> Emergency Contact</h5>
               <p><strong>24/7 Security:</strong> <a href="tel:+911234567899">+91 12345 67899</a></p>
+              <p><strong>Maintenance:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+            
+            <div class="support-info">
+              <h5><i class="fas fa-headset"></i> Support Hours</h5>
+              <p>General Inquiries: 9 AM - 7 PM</p>
+              <p>Emergency Support: 24/7</p>
             </div>
           </div>
         </div>
@@ -728,7 +554,7 @@
       
       <div class="footer-bottom">
         <div class="footer-bottom-content">
-          <p>© <span id="year">2025</span> CampusStay. All rights reserved. | Made with ❤️ for students</p>
+          <p>© <span id="year">2025</span> Om Shiv Shakti. All rights reserved. | Made with ❤️ for students</p>
           <div class="footer-certifications">
             <span>Certified Safe Accommodation</span>
             <span>ISO 9001:2015</span>
@@ -739,244 +565,8 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function(){
-      // Hamburger menu toggle
-      var btn = document.querySelector('.hamburger');
-      var nav = document.querySelector('.site-nav');
-      if(btn && nav) {
-        btn.addEventListener('click', function(){
-          nav.classList.toggle('open');
-          btn.classList.toggle('active');
-        });
-      }
-
-      // Close mobile menu when clicking on a link
-      var navLinks = document.querySelectorAll('.site-nav a');
-      navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-          nav.classList.remove('open');
-          btn.classList.remove('active');
-        });
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-
-      // Gallery filter functionality
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const galleryItems = document.querySelectorAll('.gallery-item');
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          // Remove active class from all buttons
-          filterBtns.forEach(b => b.classList.remove('active'));
-          // Add active class to clicked button
-          this.classList.add('active');
-          
-          const filter = this.dataset.filter;
-          
-          galleryItems.forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-              item.style.display = 'block';
-              setTimeout(() => item.style.opacity = '1', 10);
-            } else {
-              item.style.opacity = '0';
-              setTimeout(() => item.style.display = 'none', 300);
-            }
-          });
-        });
-      });
-
-      // Pricing calculator
-      function updateCalculator() {
-        const roomType = document.getElementById('room-type');
-        const duration = document.getElementById('duration');
-        const mealPlan = document.getElementById('meal-plan');
-        const laundry = document.getElementById('laundry');
-        const parking = document.getElementById('parking');
-
-        if (!roomType || !duration || !mealPlan) return;
-
-        const roomCost = parseInt(roomType.value) || 0;
-        const months = parseInt(duration.value) || 1;
-        const mealCost = parseInt(mealPlan.value) || 0;
-        
-        let serviceCost = 0;
-        if (laundry && laundry.checked) serviceCost += 500;
-        if (parking && parking.checked) serviceCost += 300;
-
-        const monthlyTotal = roomCost + mealCost + serviceCost;
-        const grandTotal = monthlyTotal * months;
-
-        // Update display
-        document.getElementById('room-cost').textContent = '₹' + roomCost.toLocaleString();
-        document.getElementById('meal-cost').textContent = '₹' + mealCost.toLocaleString();
-        document.getElementById('service-cost').textContent = '₹' + serviceCost.toLocaleString();
-        document.getElementById('monthly-total').textContent = '₹' + monthlyTotal.toLocaleString();
-        document.getElementById('grand-total').textContent = '₹' + grandTotal.toLocaleString();
-      }
-
-      // Add event listeners for calculator inputs
-      const calcInputs = ['room-type', 'duration', 'meal-plan', 'laundry', 'parking'];
-      calcInputs.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.addEventListener('change', updateCalculator);
-        }
-      });
-
-      // Initialize calculator
-      updateCalculator();
-
-      // Multi-step form functionality
-      const formSteps = document.querySelectorAll('.form-step');
-      const nextBtns = document.querySelectorAll('.next-step');
-      const prevBtns = document.querySelectorAll('.prev-step');
-      const progressFill = document.querySelector('.progress-fill');
-      const progressSteps = document.querySelectorAll('.progress-steps .step');
-      let currentStep = 0;
-
-      function showStep(stepIndex) {
-        // Hide all stepsf
-        formSteps.forEach(step => step.classList.remove('active'));
-        progressSteps.forEach(step => step.classList.remove('active'));
-        
-        // Show current step
-        if (formSteps[stepIndex]) {
-          formSteps[stepIndex].classList.add('active');
-          progressSteps[stepIndex].classList.add('active');
-        }
-        
-        // Update progress bar
-        const progress = ((stepIndex + 1) / formSteps.length) * 100;
-        if (progressFill) {
-          progressFill.style.width = progress + '%';
-        }
-      }
-
-      nextBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          if (validateCurrentStep()) {
-            currentStep++;
-            if (currentStep < formSteps.length) {
-              showStep(currentStep);
-            }
-          }
-        });
-      });
-
-      prevBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          currentStep--;
-          if (currentStep >= 0) {
-            showStep(currentStep);
-          }
-        });
-      });
-
-      function validateCurrentStep() {
-        const currentStepElement = formSteps[currentStep];
-        const requiredInputs = currentStepElement.querySelectorAll('[required]');
-        let isValid = true;
-
-        requiredInputs.forEach(input => {
-          if (!input.value.trim()) {
-            input.classList.add('error');
-            isValid = false;
-          } else {
-            input.classList.remove('error');
-          }
-        });
-
-        return isValid;
-      }
-
-      // Form submission
-      const bookingForm = document.getElementById('booking-form');
-      if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          if (validateCurrentStep()) {
-            // Show success message
-            alert('Thank you for your inquiry! We will contact you within 24 hours.');
-            
-            // Reset form
-            bookingForm.reset();
-            currentStep = 0;
-            showStep(currentStep);
-          }
-        });
-      }
-
-      // Newsletter subscription
-      const newsletterForm = document.querySelector('.newsletter-form');
-      if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const email = this.querySelector('input[type="email"]').value;
-          if (email) {
-            alert('Thank you for subscribing to our newsletter!');
-            this.reset();
-          }
-        });
-      }
-
-      // Set minimum date for move-in date inputs
-      const today = new Date().toISOString().split('T')[0];
-      document.querySelectorAll('input[type="date"]').forEach(input => {
-        input.setAttribute('min', today);
-      });
-
-      // Update current year in footer
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Add entrance animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, observerOptions);
-
-      // Observe sections for animations
-      document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-      });
-    });
-
-    // Add loading states for buttons
-    document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('btn-primary') && e.target.type === 'submit') {
-        e.target.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        e.target.disabled = true;
-        
-        // Re-enable after 3 seconds (for demo purposes)
-        setTimeout(() => {
-          e.target.innerHTML = '<i class="fas fa-paper-plane"></i> Send Inquiry';
-          e.target.disabled = false;
-        }, 3000);
-      }
-    });
-  </script>
+  <!-- External JavaScript Files -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>
